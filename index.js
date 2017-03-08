@@ -3,3 +3,4 @@
  */
 exports.ServerRegister = require('./lib/ZookeeperThriftServerRegister');
 exports.zk = require('node-zookeeper-client');
+exports.ServerProvider = require('./lib/ZookeeperThriftServerProvider');

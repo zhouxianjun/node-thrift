@@ -1,8 +1,8 @@
 /**
  * Created with JetBrains Idea.
- * User: Gary
- * Date: 2016/5/4
- * Time: 14:30
+ * User: Along(Gary)
+ * Date: 3/8/17
+ * Time: 10:27 PM
  *                 _ooOoo_
  *                o8888888o
  *                88" . "88
@@ -25,29 +25,12 @@
  *           佛祖保佑       永无BUG
  */
 'use strict';
-const merge = require('merge');
-const PoolInvoker = require('../PoolInvoker');
-module.exports = class PoolInvokerFactory extends require('./InvokerFactory') {
-    constructor(config) {
-        super();
-        this['config'] = merge(config, {
-            maxActive: 100,
-            idleTime: 180000
-        });
+module.exports = class DemoService extends require('../../lib/ReferenceBean') {
+    say() {}
+    get type() {
+        return require('../thrift/Demo');
     }
-    set transport(transport) {
-        this.config.transport = transport;
-    }
-    set protocol(protocol) {
-        this.config.protocol = protocol;
-    }
-    set maxActive(maxActive) {
-        this.config.maxActive = maxActive;
-    }
-    set idleTime(idleTime) {
-        this.config.idleTime = idleTime;
-    }
-    newInvoker(service, address, type) {
-        return new PoolInvoker(address, type, service, this.config);
+    get service() {
+        return 'DemoService';
     }
 };
