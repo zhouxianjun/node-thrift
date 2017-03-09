@@ -19,9 +19,11 @@ provider.load('./client/');
 provider.on('ready', () => {
     console.log('ready.....');
     let demoService = ReferenceBean.instance();
-    demoService.say('Alone').then(result => {
-        console.log('result', result);
-    }).catch(err => {
-        console.log(err.stack);
-    });
+    setInterval(() => {
+        demoService.say('Alone').then(result => {
+            console.log('result', result);
+        }).catch(err => {
+            console.log(err.stack);
+        });
+    }, 2000);
 });
