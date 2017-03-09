@@ -26,7 +26,7 @@
  */
 'use strict';
 module.exports = class DemoService extends require('../../lib/ReferenceBean') {
-    say() {}
+    say(name) {}
     get type() {
         return require('../thrift/Demo');
     }

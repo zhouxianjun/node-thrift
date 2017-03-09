@@ -8,7 +8,7 @@ module.exports = class DemoService {
     static get version() {
         return '1.0.0';
     }
-    say(){
-        console.log('ok');
+    say(name){
+        console.log('say ok');
     }
 };
