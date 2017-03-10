@@ -12,4 +12,5 @@ module.exports = class DemoService {
         console.log('say ok');
         return name;
     }
+    aa(){}
 };
