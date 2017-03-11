@@ -12,7 +12,7 @@ let provider = new ServerProvider(client, {
         transport: thrift.TFramedTransport,
         protocol: thrift.TCompactProtocol
     }),
-    loadBalance: new nodeThrift.loadBalance.RoundRobinLoadBalance()
+    loadBalance: new nodeThrift.loadBalance.RoundRobinLoadBalance(),
 });
 const ReferenceBean = require('../test/client/DemoService');
 provider.load('./client/');

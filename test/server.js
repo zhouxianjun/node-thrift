@@ -20,5 +20,5 @@ serverB.on('ready', () => {
 serverB.load('./service/');
 
 process.on('uncaughtException', (err) => {
-    console.log(err.stack);
+    console.log(err);
 });
