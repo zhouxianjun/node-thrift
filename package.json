@@ -1,7 +1,7 @@
 {
-  "name": "node-thrift",
+  "name": "trc",
   "version": "1.0.0",
-  "description": "node thrift",
+  "description": "node thrift register center",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
