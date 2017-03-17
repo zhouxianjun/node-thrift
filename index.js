@@ -4,6 +4,7 @@
 exports.ServerRegister = require('./lib/ZookeeperThriftServerRegister');
 exports.zk = require('node-zookeeper-client');
 exports.ServerProvider = require('./lib/ZookeeperThriftServerProvider');
+exports.ReferenceBean = require('./lib/ReferenceBean');
 exports.invoker = {
     invoker: require('./lib/invoker/Invoker'),
     AbstractInvoker: require('./lib/invoker/AbstractInvoker'),
