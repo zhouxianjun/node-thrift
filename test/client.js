@@ -4,6 +4,7 @@
 'use strict';
 const thrift = require('thrift');
 const nodeThrift = require('../index');
+const HelloFilter = require('./HelloFilter');
 let client = nodeThrift.zk.createClient('127.0.0.1:2181');
 client.connect();
 const ServerProvider = nodeThrift.ServerProvider;
@@ -13,6 +14,7 @@ let provider = new ServerProvider(client, {
         protocol: thrift.TCompactProtocol
     }),
     loadBalance: new nodeThrift.loadBalance.RoundRobinLoadBalance(),
+    filters: [new HelloFilter()]
 });
 const ReferenceBean = require('../test/client/DemoService');
 provider.load('./client/');
