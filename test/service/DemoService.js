@@ -1,7 +1,7 @@
 /**
  * Created by Alone on 2017/3/7.
  */
-module.exports = class DemoService {
+module.exports = class Demo {
     static get thrift() {
         return require('../thrift/Demo');
     }

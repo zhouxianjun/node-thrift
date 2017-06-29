@@ -31,7 +31,7 @@ module.exports = class DemoService extends require('../../lib/ReferenceBean') {
         return require('../thrift/Demo');
     }
     get service() {
-        return 'DemoService';
+        return 'Demo';
     }
     hello(){}
 };

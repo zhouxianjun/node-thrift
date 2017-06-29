@@ -15,11 +15,13 @@ let provider = new trc.ServerProvider(client, {
     loadBalance: new trc.loadBalance.RoundRobinLoadBalance(),
     filters: [new HelloFilter()]
 });
-const ReferenceBean = require('../test/client/DemoService');
-provider.load('./client/');
+provider.loadType('./thrift/');
 provider.on('ready', () => {
     console.log('ready.....');
-    let demoService = ReferenceBean.instance();
+    let type = require('./thrift/Demo');
+    let demoService = trc.ServerProvider.instance(type);
+    let dynamic = provider.dynamic(type);
+    console.log(dynamic);
     setInterval(() => {
         demoService.say('Alone').then(result => {
             console.log('result', result);
