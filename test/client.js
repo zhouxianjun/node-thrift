@@ -19,12 +19,17 @@ const ReferenceBean = require('../test/client/DemoService');
 provider.load('./client/');
 provider.on('ready', () => {
     console.log('ready.....');
+    let i = 0;
     let demoService = ReferenceBean.instance();
-    setInterval(() => {
-        demoService.say('Alone').then(result => {
-            console.log('result', result);
-        }).catch(err => {
-            console.log(err.stack);
-        });
-    }, 2000);
+    setInterval(async () => {
+        i++;
+        (async n => {
+            try {
+                let result = await demoService.say(`Alone-${n}`);
+                console.log(`result-${n}`, result);
+            } catch (err) {
+                console.log(err.stack);
+            }
+        })(i);
+    }, 3000);
 });

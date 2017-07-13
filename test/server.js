@@ -11,13 +11,13 @@ serverA.on('ready', () => {
 });
 serverA.load('./service/');
 
-let serverB = new nodeThrift.ServerRegister(client, {
+/*let serverB = new nodeThrift.ServerRegister(client, {
     port: 8090
 });
 serverB.on('ready', () => {
     console.log('serverB stared...');
 });
-serverB.load('./service/');
+serverB.load('./service/');*/
 
 process.on('uncaughtException', (err) => {
     console.log(err);
